@@ -10,11 +10,11 @@ fn not_main() {
 
     println!("The value of y is: {y}");
 
-    let five_hundred = tup.0;
+    let _five_hundred = tup.0;
 
-    let six_point_four = tup.1;
+    let _six_point_four = tup.1;
 
-    let one = tup.2;
+    let _one = tup.2;
 
     let a: [i32; 5] = [1, 2, 3, 4, 5]; // array
 
