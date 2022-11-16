@@ -1,5 +1,5 @@
 fn not_main() {
-    const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
+    // const THREE_HOURS_IN_SECONDS: u32 = 60 * 60 * 3;
     let mut x = 5;
     println!("The value of x is: {x}");
     x = 6;
@@ -8,7 +8,7 @@ fn not_main() {
 
     let (x, y, z) = tup;
 
-    println!("The value of y is: {y}");
+    println!("The value of y is: {y} {x} {z}");
 
     let _five_hundred = tup.0;
 
@@ -16,18 +16,18 @@ fn not_main() {
 
     let _one = tup.2;
 
-    let a: [i32; 5] = [1, 2, 3, 4, 5]; // array
+    // let a: [i32; 5] = [1, 2, 3, 4, 5]; // array
 
-    let a = [3; 5]; // [3, 3, 3, 3, 3]
+    // let a = [3; 5]; // [3, 3, 3, 3, 3]
 
-    let y = {
-        let x = 3;
-        x + 1
-    }; // 4
+    // let y = {
+    //     let x = 3;
+    //     x + 1
+    // }; // 4
 }
 
 fn plus_one(x: i32) -> (i32, i64) {
-    return (6, 7);
+    return (x, (x * x).into());
 }
 
 fn control_flow() {
@@ -93,8 +93,9 @@ fn while_loop() {
 }
 
 fn for_loop() {
-    let a = [10, 20, 30, 40, 50];
+    let mut a = [10, 20, 30, 40, 50];
 
+    a.reverse();
     for element in a {
         println!("the value is: {element}");
     }
@@ -105,12 +106,20 @@ fn range_for() {
         println!("{number}!");
     }
     println!("LIFTOFF!!!");
+
+    for_loop();
+    while_loop();
+    labels();
+    loops_in_rust();
 }
 
 fn main() {
     range_for();
     let num = fib(10);
     println!("{num}");
+    control_flow();
+    plus_one(6);
+    not_main();
 }
 
 fn fib(n: u8) -> u32 {
